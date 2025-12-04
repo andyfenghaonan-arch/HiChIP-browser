@@ -13,14 +13,14 @@
 
         body {
             font-family: "Helvetica Neue", Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: #333333;
             line-height: 1.6;
             font-size: 14px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,103 +29,152 @@
         .header {
             background: #ffffff;
             border-bottom: 3px solid #2c5aa0;
-            padding: 40px 30px;
+            padding: 30px;
             text-align: center;
         }
 
         .header h1 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 400;
             color: #2c5aa0;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
         .header .subtitle {
-            font-size: 16px;
+            font-size: 14px;
             color: #666666;
-            font-weight: 300;
-            margin-bottom: 5px;
         }
 
-        .header .description {
+        .nav-links {
+            margin-top: 15px;
+        }
+
+        .nav-links a {
+            color: #2c5aa0;
+            text-decoration: none;
+            margin: 0 15px;
             font-size: 13px;
-            color: #888888;
-            font-style: italic;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 5px;
+            font-weight: 500;
         }
 
         .main-content {
-            padding: 30px;
+            padding: 20px;
         }
 
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 500;
-            color: #2c5aa0;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .config-panel {
+        .panel {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
             border-radius: 4px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
         }
 
-        .config-grid {
+        .panel-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2c5aa0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel-title .count {
+            background: #2c5aa0;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: normal;
+        }
+
+        /* Statistics */
+        .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-bottom: 15px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-label {
-            font-size: 12px;
-            font-weight: 500;
-            color: #495057;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-input {
-            padding: 8px 12px;
-            border: 1px solid #ced4da;
-            border-radius: 3px;
-            font-family: "Monaco", "Menlo", monospace;
-            font-size: 11px;
-            color: #495057;
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            border-left: 3px solid #2c5aa0;
             background: white;
         }
 
-        .form-input:focus {
+        .stat-number {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+
+        /* Filter Section */
+        .filter-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 150px;
+        }
+
+        .filter-group label {
+            font-size: 11px;
+            color: #6c757d;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 3px;
+            font-size: 13px;
+            background: white;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
             outline: none;
             border-color: #2c5aa0;
             box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
         }
 
+        .filter-group input[type="text"] {
+            width: 200px;
+        }
+
         .btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: none;
             border-radius: 3px;
             font-size: 12px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .btn-primary {
@@ -140,672 +189,763 @@
         .btn-secondary {
             background: #6c757d;
             color: white;
-            margin-left: 10px;
         }
 
         .btn-secondary:hover {
             background: #545b62;
         }
 
-        .statistics-panel {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 15px;
-            border-left: 3px solid #2c5aa0;
-            background: #f8f9fa;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: 600;
+        .btn-outline {
+            background: white;
             color: #2c5aa0;
-            display: block;
+            border: 1px solid #2c5aa0;
         }
 
-        .stat-label {
+        .btn-outline:hover {
+            background: #e7f1ff;
+        }
+
+        .btn-sm {
+            padding: 4px 10px;
             font-size: 11px;
-            color: #6c757d;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 5px;
         }
 
-        .data-matrix {
+        .btn-download {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: #1e7e34;
+        }
+
+        /* TF Chips */
+        .tf-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .tf-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .tf-chip:hover {
+            border-color: #2c5aa0;
+        }
+
+        .tf-chip.active {
+            background: #e7f1ff;
+            border-color: #2c5aa0;
+        }
+
+        .tf-chip .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .tf-chip .tf-count {
+            color: #6c757d;
+            font-size: 11px;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
             background: white;
             border: 1px solid #dee2e6;
             border-radius: 4px;
             overflow: hidden;
         }
 
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-
-        .matrix-table th {
+        .data-table th {
             background: #f8f9fa;
             color: #495057;
             font-weight: 600;
-            padding: 12px 8px;
-            text-align: center;
+            padding: 12px 15px;
+            text-align: left;
             border-bottom: 2px solid #dee2e6;
-            border-right: 1px solid #dee2e6;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
         }
 
-        .matrix-table th:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 11;
+        .data-table th.sortable {
+            cursor: pointer;
+        }
+
+        .data-table th.sortable:hover {
             background: #e9ecef;
         }
 
-        .matrix-table td {
-            padding: 10px 8px;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-            border-right: 1px solid #f0f0f0;
-        }
-
-        .matrix-table td:first-child {
-            background: #f8f9fa;
-            font-weight: 500;
-            color: #2c5aa0;
-            text-align: left;
-            padding-left: 15px;
-            position: sticky;
-            left: 0;
-            z-index: 9;
-        }
-
-        .matrix-table tr:hover {
-            background: #f1f3f4;
-        }
-
-        .download-btn {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 3px;
-            font-size: 10px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .download-btn.single {
-            background: #28a745;
-            color: white;
-        }
-
-        .download-btn.single:hover {
-            background: #1e7e34;
-            transform: translateY(-1px);
-        }
-
-        .download-btn.multiple {
-            background: #fd7e14;
-            color: white;
-        }
-
-        .download-btn.multiple:hover {
-            background: #e55a00;
-            transform: translateY(-1px);
-        }
-
-        .not-available {
+        .data-table th .sort-icon {
+            margin-left: 5px;
             color: #adb5bd;
-            font-style: italic;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        .tf-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
             font-size: 11px;
+            font-weight: 500;
+            color: white;
         }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
+        .cell-line-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .encode-id {
+            font-family: "Monaco", "Menlo", monospace;
+            font-size: 11px;
             color: #6c757d;
-            font-style: italic;
         }
 
-        .error {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 20px;
-            border: 1px solid #f5c6cb;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        .success {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border: 1px solid #c3e6cb;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-
-        .info {
-            background: #cce7ff;
-            color: #004085;
-            padding: 15px;
-            border: 1px solid #b8daff;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-
-        .methodology-note {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-left: 4px solid #2c5aa0;
-            padding: 20px;
-            margin-top: 25px;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .methodology-note h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2c5aa0;
-            margin-bottom: 10px;
-        }
-
-        .methodology-note ul {
-            margin: 0;
-            padding-left: 20px;
-            color: #495057;
-        }
-
-        .methodology-note li {
-            margin-bottom: 8px;
+        .file-size {
+            color: #6c757d;
             font-size: 12px;
-            line-height: 1.5;
         }
 
-        /* Dialog Styles */
-        .dialog-overlay {
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .pagination button {
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            border-color: #2c5aa0;
+            background: #f8f9ff;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination .page-info {
+            font-size: 12px;
+            color: #6c757d;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .page-size-select {
+            padding: 4px 8px;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 15px;
+        }
+
+        /* Loading */
+        .loading-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 10000;
+            background: rgba(255, 255, 255, 0.9);
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
 
-        .dialog-content {
-            background: white;
-            border-radius: 6px;
-            padding: 30px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 500px;
-            overflow-y: auto;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .dialog-title {
-            font-size: 18px;
-            font-weight: 500;
-            color: #2c5aa0;
-            margin-bottom: 15px;
+        .loading-content {
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
         }
 
-        .dialog-subtitle {
-            font-size: 13px;
-            color: #6c757d;
-            text-align: center;
-            margin-bottom: 20px;
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2c5aa0;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
         }
 
-        .sample-item {
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #f8f9fa;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .sample-item:hover {
-            border-color: #2c5aa0;
+        /* Bulk Download */
+        .bulk-download-bar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 15px;
             background: #e7f1ff;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
 
-        .sample-title {
+        .bulk-download-bar .selected-count {
             font-weight: 600;
             color: #2c5aa0;
-            font-size: 13px;
-            margin-bottom: 5px;
         }
 
-        .sample-id {
-            font-size: 11px;
-            color: #6c757d;
-            font-family: "Monaco", "Menlo", monospace;
+        .select-all-checkbox {
+            margin-right: 5px;
         }
 
-        .sample-note {
-            font-size: 10px;
-            color: #adb5bd;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        .dialog-actions {
+        footer {
             text-align: center;
-            margin-top: 20px;
-            padding-top: 15px;
+            padding: 20px;
             border-top: 1px solid #e0e0e0;
+            color: #6c757d;
+            font-size: 11px;
+        }
+
+        footer a {
+            color: #2c5aa0;
         }
 
         @media (max-width: 768px) {
             .container {
                 margin: 0;
             }
-            
-            .header {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .main-content {
-                padding: 20px;
+
+            .filter-row {
+                flex-direction: column;
             }
 
-            .config-grid {
-                grid-template-columns: 1fr;
+            .filter-group input[type="text"] {
+                width: 100%;
+            }
+
+            .data-table {
+                font-size: 11px;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="loading-overlay" id="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div>Loading dataset index...</div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <h1>Transcription Factor Chromatin Loop Database</h1>
-            <div class="subtitle">Interactive Browser for FitHiChIP-derived Chromatin Interactions</div>
-            <div class="description">Peak-to-peak loop data from ENCODE ChIP-seq experiments</div>
-            <div style="margin-top: 15px;">
-                <a href="index.html" style="color: #2c5aa0; text-decoration: none; margin: 0 15px; font-size: 13px; border-bottom: 2px solid #2c5aa0; padding-bottom: 5px; font-weight: 500;">Data Download</a>
-                <a href="igv.html" style="color: #2c5aa0; text-decoration: none; margin: 0 15px; font-size: 13px;">IGV Browser</a>
-                <a href="heatmap.html" style="color: #2c5aa0; text-decoration: none; margin: 0 15px; font-size: 13px;">Heatmap Browser</a>
+            <div class="subtitle">Interactive Browser for HiChIP-derived Chromatin Interactions</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Data Download</a>
+                <a href="igv.html">IGV Browser</a>
+                <a href="heatmap.html">Heatmap Browser</a>
             </div>
         </div>
 
         <div class="main-content">
-            <!-- Dataset Statistics -->
-            <div class="section">
-                <div class="statistics-panel" id="stats-section" style="display: none;">
-                    <h3 class="section-title">Dataset Overview</h3>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number" id="total-tfs">-</span>
-                            <div class="stat-label">Transcription Factors</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="total-datasets">-</span>
-                            <div class="stat-label">Total Datasets</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="total-cell-lines">-</span>
-                            <div class="stat-label">Cell Lines</div>
-                        </div>
+            <!-- Statistics -->
+            <div class="panel">
+                <div class="panel-title">Dataset Overview</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-total">-</div>
+                        <div class="stat-label">Total Datasets</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-tfs">-</div>
+                        <div class="stat-label">Transcription Factors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-celllines">-</div>
+                        <div class="stat-label">Cell Lines</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-filtered">-</div>
+                        <div class="stat-label">Filtered Results</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Data Matrix -->
-            <div class="section">
-                <h2 class="section-title">
-                    Transcription Factor × Cell Line Data Matrix
-                    <button class="btn btn-secondary" onclick="showMethodology()" style="float: right; font-size: 10px; padding: 5px 10px;">Methodology</button>
-                </h2>
-                <div id="matrix-container">
-                    <div class="loading">Initializing dataset browser...</div>
+            <!-- Filters -->
+            <div class="panel">
+                <div class="panel-title">Filter Datasets</div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Transcription Factor</label>
+                        <select id="tf-filter">
+                            <option value="">All TFs</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Cell Line / Tissue</label>
+                        <select id="cellline-filter">
+                            <option value="">All Cell Lines</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="search-input" placeholder="Search by name or ENCODE ID...">
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="clearFilters()">Clear Filters</button>
+                </div>
+                <div class="tf-filters" id="tf-chips"></div>
+            </div>
+
+            <!-- Bulk Download Bar -->
+            <div class="bulk-download-bar" id="bulk-bar" style="display: none;">
+                <input type="checkbox" id="select-all" class="select-all-checkbox" onchange="toggleSelectAll(this.checked)">
+                <span>Selected: <span class="selected-count" id="selected-count">0</span> files</span>
+                <button class="btn btn-download btn-sm" onclick="downloadSelected()">Download Selected</button>
+                <button class="btn btn-outline btn-sm" onclick="clearSelection()">Clear Selection</button>
+            </div>
+
+            <!-- Data Table -->
+            <div class="panel" style="padding: 0; overflow: hidden;">
+                <table class="data-table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;">
+                                <input type="checkbox" id="header-checkbox" onchange="toggleSelectAll(this.checked)">
+                            </th>
+                            <th class="sortable" onclick="sortBy('tf')">TF <span class="sort-icon">↕</span></th>
+                            <th class="sortable" onclick="sortBy('cellLine')">Cell Line <span class="sort-icon">↕</span></th>
+                            <th class="sortable" onclick="sortBy('encodeId')">ENCODE ID <span class="sort-icon">↕</span></th>
+                            <th style="width: 120px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <button onclick="goToPage(1)" id="btn-first">First</button>
+                    <button onclick="goToPage(currentPage - 1)" id="btn-prev">Prev</button>
+                    <span class="page-info" id="page-info">Page 1 of 1</span>
+                    <button onclick="goToPage(currentPage + 1)" id="btn-next">Next</button>
+                    <button onclick="goToPage(totalPages)" id="btn-last">Last</button>
+                    <select class="page-size-select" id="page-size" onchange="changePageSize(this.value)">
+                        <option value="25">25 per page</option>
+                        <option value="50" selected>50 per page</option>
+                        <option value="100">100 per page</option>
+                        <option value="200">200 per page</option>
+                    </select>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; border-top: 1px solid #e0e0e0; color: #6c757d; font-size: 11px;">
-        <p style="margin-bottom: 10px;">
-            <strong>Transcription Factor Chromatin Loop Database</strong> | 
-            Processed using FitHiChIP v2.0 algorithm | 
-            Data from ENCODE Project ChIP-seq experiments
-        </p>
+    <footer>
         <p>
-            Peak-to-peak interactions filtered at Q-value &lt; 0.01 | 
-            For research purposes only | 
-            <em>Please cite original ENCODE datasets when using this data</em>
+            <strong>Transcription Factor Chromatin Loop Database</strong> |
+            Processed using FitHiChIP algorithm |
+            Data from <a href="https://www.encodeproject.org/" target="_blank">ENCODE Project</a>
         </p>
     </footer>
 
     <script>
-        // Global data storage
-        let loopData = {};
-        let dataStats = {};
-        
-        // Page initialization - auto-load data
-        document.addEventListener('DOMContentLoaded', function() {
-            // Auto-load data when page loads
-            setTimeout(() => {
-                loadDataFromOSS();
-            }, 500);
+        // Global state
+        let allSamples = [];
+        let filteredSamples = [];
+        let selectedSamples = new Set();
+
+        // Pagination
+        let currentPage = 1;
+        let pageSize = 50;
+        let totalPages = 1;
+
+        // Sorting
+        let sortField = 'tf';
+        let sortDirection = 'asc';
+
+        // TF colors
+        const TF_COLORS = {
+            'CTCF': '#0066cc',
+            'Rad21': '#28a745',
+            'KLF4': '#dc3545',
+            'OCT4': '#fd7e14',
+            'NANOG': '#6f42c1'
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                await loadDataIndex();
+                buildFilters();
+                buildTFChips();
+                applyFilters();
+                document.getElementById('loading').style.display = 'none';
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="loading-content">
+                        <div style="color: #dc3545;">Error: ${error.message}</div>
+                    </div>
+                `;
+            }
         });
 
-        // Load data from OSS - auto-initialize
-        async function loadDataFromOSS() {
-            const container = document.getElementById('matrix-container');
-            container.innerHTML = '<div class="loading">Loading dataset from remote repository...</div>';
-            
+        // Load data index
+        async function loadDataIndex() {
+            const ossUrl = 'https://tf-loops.oss-cn-hangzhou.aliyuncs.com/oss_upload_folder/loops/file_index.json';
+            const localUrl = 'file_index.json';
+
+            let indexData = null;
+
             try {
-                // Use predefined configuration
-                const bucketName = 'tf-loops';
-                const endpoint = 'oss-cn-hangzhou.aliyuncs.com';
-                const indexPath = 'oss_upload_folder/loops/file_index.json';
-                
-                const indexUrl = `https://${bucketName}.${endpoint}/${indexPath}`;
-                
-                console.log('Fetching data index:', indexUrl);
-                
-                const response = await fetch(indexUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 15000);
+                const response = await fetch(ossUrl, { cache: 'no-store', signal: controller.signal });
+                clearTimeout(timeoutId);
+                if (response.ok) indexData = await response.json();
+            } catch (e) {
+                console.warn('OSS load failed:', e.message);
+            }
+
+            if (!indexData) {
+                try {
+                    const response = await fetch(localUrl);
+                    if (response.ok) indexData = await response.json();
+                } catch (e) {
+                    console.warn('Local load failed:', e.message);
                 }
-                
-                const indexData = await response.json();
-                
-                // Process data
-                loopData = {};
-                Object.keys(indexData.data).forEach(tf => {
-                    loopData[tf] = {};
-                    Object.keys(indexData.data[tf]).forEach(cellLine => {
-                        loopData[tf][cellLine] = indexData.data[tf][cellLine].download_url;
+            }
+
+            if (!indexData) throw new Error('Failed to load file_index.json');
+
+            // Flatten to array
+            allSamples = [];
+            Object.keys(indexData.data).forEach(tf => {
+                Object.keys(indexData.data[tf]).forEach(sampleId => {
+                    const cellLine = sampleId.replace(/_ENCFF[A-Z0-9]+$/, '');
+                    const encodeId = sampleId.match(/ENCFF[A-Z0-9]+$/)?.[0] || sampleId;
+
+                    allSamples.push({
+                        id: `${tf}_${sampleId}`,
+                        tf: tf,
+                        sampleId: sampleId,
+                        cellLine: cellLine,
+                        encodeId: encodeId,
+                        downloadUrl: indexData.data[tf][sampleId].download_url
                     });
                 });
-                
-                dataStats = indexData.statistics;
-                
-                // Update interface
-                updateStatistics();
-                buildMatrix();
-                
-                document.getElementById('stats-section').style.display = 'block';
-                
-            } catch (error) {
-                console.error('Data loading failed:', error);
-                container.innerHTML = `
-                    <div class="error">
-                        <h4>Dataset Loading Error</h4>
-                        <p><strong>Error Details:</strong> ${error.message}</p>
-                        <p style="margin-top: 15px;">
-                            Unable to connect to the remote data repository. Please check your internet connection 
-                            or contact the database administrator if the problem persists.
-                        </p>
-                    </div>
-                `;
-            }
-        }
-
-        // Update statistics
-        function updateStatistics() {
-            document.getElementById('total-tfs').textContent = dataStats.total_tfs || '-';
-            document.getElementById('total-datasets').textContent = dataStats.total_files || '-';
-            // Count unique cell lines (excluding ENCODE IDs)
-            const uniqueCellLines = getAllCellLines();
-            document.getElementById('total-cell-lines').textContent = uniqueCellLines.length || '-';
-        }
-
-        // Get unique cell lines (remove ENCODE ID suffix)
-        function getAllCellLines() {
-            const cellLines = new Set();
-            Object.values(loopData).forEach(tf => {
-                Object.keys(tf).forEach(cellLineWithEncode => {
-                    const pureCellLine = cellLineWithEncode.replace(/_ENCFF[A-Z0-9]+$/, '');
-                    cellLines.add(pureCellLine);
-                });
             });
-            return Array.from(cellLines).sort();
+
+            // Update statistics
+            document.getElementById('stat-total').textContent = allSamples.length;
+            document.getElementById('stat-tfs').textContent = new Set(allSamples.map(s => s.tf)).size;
+            document.getElementById('stat-celllines').textContent = new Set(allSamples.map(s => s.cellLine)).size;
+
+            console.log(`Loaded ${allSamples.length} samples`);
         }
 
-        // Get ENCODE samples for specific TF and cell line
-        function getEncodeSamples(tf, pureCellLine) {
-            const samples = [];
-            if (loopData[tf]) {
-                Object.keys(loopData[tf]).forEach(cellLineWithEncode => {
-                    const extractedCellLine = cellLineWithEncode.replace(/_ENCFF[A-Z0-9]+$/, '');
-                    if (extractedCellLine === pureCellLine) {
-                        const encodeId = cellLineWithEncode.match(/_ENCFF[A-Z0-9]+$/)?.[0] || '';
-                        samples.push({
-                            fullId: cellLineWithEncode,
-                            encodeId: encodeId,
-                            downloadUrl: loopData[tf][cellLineWithEncode]
-                        });
-                    }
-                });
-            }
-            return samples;
+        // Build filter dropdowns
+        function buildFilters() {
+            const tfFilter = document.getElementById('tf-filter');
+            const cellLineFilter = document.getElementById('cellline-filter');
+
+            const tfs = [...new Set(allSamples.map(s => s.tf))].sort();
+            const cellLines = [...new Set(allSamples.map(s => s.cellLine))].sort();
+
+            tfs.forEach(tf => {
+                const count = allSamples.filter(s => s.tf === tf).length;
+                const opt = document.createElement('option');
+                opt.value = tf;
+                opt.textContent = `${tf} (${count})`;
+                tfFilter.appendChild(opt);
+            });
+
+            cellLines.forEach(cl => {
+                const opt = document.createElement('option');
+                opt.value = cl;
+                opt.textContent = cl;
+                cellLineFilter.appendChild(opt);
+            });
+
+            // Event listeners
+            tfFilter.addEventListener('change', () => { applyFilters(); updateTFChips(); });
+            cellLineFilter.addEventListener('change', applyFilters);
+            document.getElementById('search-input').addEventListener('input', debounce(applyFilters, 300));
         }
 
-        // Show download selection dialog
-        function showDownloadDialog(tf, pureCellLine, samples) {
-            if (samples.length === 1) {
-                // Single sample, direct download
-                const link = document.createElement('a');
-                link.href = samples[0].downloadUrl;
-                link.download = `${tf}_${samples[0].fullId}_loops.bed`;
-                link.target = '_blank';
-                link.click();
-                return;
-            }
+        // Build TF chips
+        function buildTFChips() {
+            const container = document.getElementById('tf-chips');
+            const tfOrder = ['CTCF', 'Rad21', 'KLF4', 'OCT4', 'NANOG'];
 
-            // Multiple samples, show selection dialog
-            const dialog = document.createElement('div');
-            dialog.className = 'dialog-overlay';
-
-            const dialogContent = document.createElement('div');
-            dialogContent.className = 'dialog-content';
-
-            let html = `
-                <h3 class="dialog-title">Dataset Selection: ${tf} × ${pureCellLine}</h3>
-                <p class="dialog-subtitle">
-                    Multiple ENCODE experiments available (${samples.length} datasets). 
-                    Select individual experiment or download all datasets.
-                </p>
-                <div style="margin-bottom: 20px;">
-            `;
-
-            samples.forEach((sample, index) => {
+            let html = '';
+            tfOrder.forEach(tf => {
+                const count = allSamples.filter(s => s.tf === tf).length;
+                if (count === 0) return;
+                const color = TF_COLORS[tf] || '#999';
                 html += `
-                    <div class="sample-item" onclick="downloadSample('${sample.downloadUrl}', '${tf}_${sample.fullId}_loops.bed'); closeDialog();">
-                        <div class="sample-title">Experiment ${index + 1}: ${sample.encodeId}</div>
-                        <div class="sample-id">Dataset ID: ${sample.fullId}</div>
-                        <div class="sample-note">Click to download BED format file</div>
+                    <div class="tf-chip" data-tf="${tf}" onclick="toggleTFChip('${tf}')">
+                        <span class="color-dot" style="background: ${color};"></span>
+                        <span>${tf}</span>
+                        <span class="tf-count">(${count})</span>
                     </div>
                 `;
             });
-
-            html += `
-                </div>
-                <div class="dialog-actions">
-                    <button class="btn btn-secondary" onclick="closeDialog()">Cancel</button>
-                    <button class="btn btn-primary" onclick="downloadAllSamples(); closeDialog()" style="margin-left: 15px;">Download All Experiments</button>
-                </div>
-            `;
-
-            dialogContent.innerHTML = html;
-            dialog.appendChild(dialogContent);
-            document.body.appendChild(dialog);
-
-            // Store current samples
-            window.currentSamples = samples;
-            window.currentTF = tf;
+            container.innerHTML = html;
         }
 
-        // Download single sample
-        function downloadSample(url, filename) {
+        function toggleTFChip(tf) {
+            const tfFilter = document.getElementById('tf-filter');
+            tfFilter.value = tfFilter.value === tf ? '' : tf;
+            applyFilters();
+            updateTFChips();
+        }
+
+        function updateTFChips() {
+            const tfFilter = document.getElementById('tf-filter');
+            document.querySelectorAll('.tf-chip').forEach(chip => {
+                chip.classList.toggle('active', chip.dataset.tf === tfFilter.value);
+            });
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const tfValue = document.getElementById('tf-filter').value;
+            const cellLineValue = document.getElementById('cellline-filter').value;
+            const searchValue = document.getElementById('search-input').value.toLowerCase();
+
+            filteredSamples = allSamples.filter(s => {
+                if (tfValue && s.tf !== tfValue) return false;
+                if (cellLineValue && s.cellLine !== cellLineValue) return false;
+                if (searchValue) {
+                    const searchStr = `${s.tf} ${s.cellLine} ${s.encodeId} ${s.sampleId}`.toLowerCase();
+                    if (!searchStr.includes(searchValue)) return false;
+                }
+                return true;
+            });
+
+            // Sort
+            sortSamples();
+
+            // Update stats
+            document.getElementById('stat-filtered').textContent = filteredSamples.length;
+
+            currentPage = 1;
+            totalPages = Math.ceil(filteredSamples.length / pageSize) || 1;
+            renderTable();
+            updatePagination();
+            updateBulkBar();
+        }
+
+        function clearFilters() {
+            document.getElementById('tf-filter').value = '';
+            document.getElementById('cellline-filter').value = '';
+            document.getElementById('search-input').value = '';
+            updateTFChips();
+            applyFilters();
+        }
+
+        // Sorting
+        function sortBy(field) {
+            if (sortField === field) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortField = field;
+                sortDirection = 'asc';
+            }
+            sortSamples();
+            renderTable();
+        }
+
+        function sortSamples() {
+            filteredSamples.sort((a, b) => {
+                let valA = a[sortField] || '';
+                let valB = b[sortField] || '';
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        // Render table
+        function renderTable() {
+            const tbody = document.getElementById('table-body');
+            const start = (currentPage - 1) * pageSize;
+            const end = start + pageSize;
+            const pageData = filteredSamples.slice(start, end);
+
+            let html = '';
+            pageData.forEach(sample => {
+                const color = TF_COLORS[sample.tf] || '#999';
+                const isSelected = selectedSamples.has(sample.id);
+
+                html += `
+                    <tr>
+                        <td>
+                            <input type="checkbox"
+                                   ${isSelected ? 'checked' : ''}
+                                   onchange="toggleSampleSelection('${sample.id}', this.checked)">
+                        </td>
+                        <td>
+                            <span class="tf-badge" style="background: ${color};">${sample.tf}</span>
+                        </td>
+                        <td>
+                            <span class="cell-line-name">${sample.cellLine}</span>
+                        </td>
+                        <td>
+                            <span class="encode-id">${sample.encodeId}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-download btn-sm" onclick="downloadFile('${sample.downloadUrl}', '${sample.tf}_${sample.sampleId}_loops.bed')">
+                                Download
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html || '<tr><td colspan="5" style="text-align: center; padding: 40px; color: #6c757d;">No matching datasets found</td></tr>';
+        }
+
+        // Pagination
+        function updatePagination() {
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages} (${filteredSamples.length} items)`;
+            document.getElementById('btn-first').disabled = currentPage === 1;
+            document.getElementById('btn-prev').disabled = currentPage === 1;
+            document.getElementById('btn-next').disabled = currentPage === totalPages;
+            document.getElementById('btn-last').disabled = currentPage === totalPages;
+        }
+
+        function goToPage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderTable();
+            updatePagination();
+        }
+
+        function changePageSize(size) {
+            pageSize = parseInt(size);
+            currentPage = 1;
+            totalPages = Math.ceil(filteredSamples.length / pageSize) || 1;
+            renderTable();
+            updatePagination();
+        }
+
+        // Selection
+        function toggleSampleSelection(id, isChecked) {
+            if (isChecked) {
+                selectedSamples.add(id);
+            } else {
+                selectedSamples.delete(id);
+            }
+            updateBulkBar();
+        }
+
+        function toggleSelectAll(isChecked) {
+            const start = (currentPage - 1) * pageSize;
+            const end = start + pageSize;
+            const pageData = filteredSamples.slice(start, end);
+
+            pageData.forEach(sample => {
+                if (isChecked) {
+                    selectedSamples.add(sample.id);
+                } else {
+                    selectedSamples.delete(sample.id);
+                }
+            });
+
+            renderTable();
+            updateBulkBar();
+        }
+
+        function clearSelection() {
+            selectedSamples.clear();
+            renderTable();
+            updateBulkBar();
+        }
+
+        function updateBulkBar() {
+            const bar = document.getElementById('bulk-bar');
+            const count = document.getElementById('selected-count');
+
+            if (selectedSamples.size > 0) {
+                bar.style.display = 'flex';
+                count.textContent = selectedSamples.size;
+            } else {
+                bar.style.display = 'none';
+            }
+        }
+
+        // Download functions
+        function downloadFile(url, filename) {
             const link = document.createElement('a');
             link.href = url;
             link.download = filename;
             link.target = '_blank';
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
 
-        // Download all samples
-        function downloadAllSamples() {
-            if (window.currentSamples) {
-                window.currentSamples.forEach((sample, index) => {
+        function downloadSelected() {
+            const selected = Array.from(selectedSamples);
+            selected.forEach((id, index) => {
+                const sample = allSamples.find(s => s.id === id);
+                if (sample) {
                     setTimeout(() => {
-                        downloadSample(sample.downloadUrl, `${window.currentTF}_${sample.fullId}_loops.bed`);
-                    }, index * 200);
-                });
-            }
-        }
-
-        // Close dialog
-        function closeDialog() {
-            const dialogs = document.querySelectorAll('.dialog-overlay');
-            dialogs.forEach(dialog => {
-                document.body.removeChild(dialog);
+                        downloadFile(sample.downloadUrl, `${sample.tf}_${sample.sampleId}_loops.bed`);
+                    }, index * 300);
+                }
             });
         }
 
-        // Show methodology information
-        function showMethodology() {
-            const dialog = document.createElement('div');
-            dialog.className = 'dialog-overlay';
-
-            const dialogContent = document.createElement('div');
-            dialogContent.className = 'dialog-content';
-
-            dialogContent.innerHTML = `
-                <h3 class="dialog-title">Methodology & Data Processing</h3>
-                <div style="text-align: left; font-size: 13px; line-height: 1.6;">
-                    <h4 style="color: #2c5aa0; margin: 15px 0 10px 0;">Data Source</h4>
-                    <p>ChIP-seq experimental data from ENCODE Project, processed using the FitHiChIP v2.0 algorithm for identifying significant chromatin interactions.</p>
-                    
-                    <h4 style="color: #2c5aa0; margin: 15px 0 10px 0;">Processing Pipeline</h4>
-                    <ul style="padding-left: 20px; margin: 10px 0;">
-                        <li>Peak-to-peak interaction mode analysis</li>
-                        <li>Coverage bias correction applied</li>
-                        <li>Statistical significance threshold: Q-value < 0.01</li>
-                        <li>Nearby interactions merged (default parameters)</li>
-                        <li>Output format: Standard BED format with interaction coordinates</li>
-                    </ul>
-                    
-                    <h4 style="color: #2c5aa0; margin: 15px 0 10px 0;">Data Access</h4>
-                    <p>All datasets are stored in BED format containing genomic coordinates of significant chromatin loops. Each file represents one biological experiment with unique ENCODE identifier.</p>
-                    
-                    <h4 style="color: #2c5aa0; margin: 15px 0 10px 0;">Citation</h4>
-                    <p style="font-style: italic; background: #f8f9fa; padding: 10px; border-radius: 3px;">
-                        Please cite the original ENCODE experiments and FitHiChIP publication when using this data in your research.
-                    </p>
-                </div>
-                <div class="dialog-actions">
-                    <button class="btn btn-primary" onclick="closeDialog()">Close</button>
-                </div>
-            `;
-
-            dialog.appendChild(dialogContent);
-            document.body.appendChild(dialog);
-        }
-
-        // Build data matrix
-        function buildMatrix() {
-            const container = document.getElementById('matrix-container');
-            const cellLines = getAllCellLines();
-            const tfs = Object.keys(loopData);
-            
-            if (tfs.length === 0) {
-                container.innerHTML = '<div class="loading">No data available</div>';
-                return;
-            }
-            
-            let html = `
-                <div class="data-matrix">
-                    <table class="matrix-table">
-                        <thead>
-                            <tr>
-                                <th>TF</th>
-                                ${cellLines.map(cl => `<th>${cl}</th>`).join('')}
-                            </tr>
-                        </thead>
-                        <tbody>
-            `;
-            
-            tfs.forEach(tf => {
-                html += `<tr><td>${tf}</td>`;
-                cellLines.forEach(pureCellLine => {
-                    const samples = getEncodeSamples(tf, pureCellLine);
-                    
-                    if (samples.length > 0) {
-                        const sampleCount = samples.length > 1 ? ` (${samples.length})` : '';
-                        const btnClass = samples.length > 1 ? 'multiple' : 'single';
-                        const btnText = samples.length > 1 ? 'Select' : 'Download';
-                        
-                        html += `
-                            <td>
-                                <button 
-                                    class="download-btn ${btnClass}"
-                                    onclick="showDownloadDialog('${tf}', '${pureCellLine}', getEncodeSamples('${tf}', '${pureCellLine}'))"
-                                    title="Click to ${samples.length > 1 ? 'select from available experiments' : 'download dataset'}">
-                                    ${btnText}${sampleCount}
-                                </button>
-                            </td>
-                        `;
-                    } else {
-                        html += '<td class="not-available">—</td>';
-                    }
-                });
-                html += '</tr>';
-            });
-            
-            html += `
-                        </tbody>
-                    </table>
-                </div>
-                <div class="methodology-note">
-                    <h4>Data Matrix Legend</h4>
-                    <ul>
-                        <li><strong>Download button (green):</strong> Single ENCODE experiment available. Click to download BED file directly.</li>
-                        <li><strong>Select button (orange):</strong> Multiple ENCODE experiments available. Click to choose specific dataset or download all.</li>
-                        <li><strong>Number annotation:</strong> Indicates the number of available experimental replicates.</li>
-                        <li><strong>File format:</strong> All files are in standard BED format containing loop coordinates and statistical scores.</li>
-                    </ul>
-                </div>
-            `;
-            
-            container.innerHTML = html;
+        // Utility
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
         }
     </script>
 </body>
